@@ -42,6 +42,12 @@ function limparCampo() {
 
 // Escuta o clique do botão
 botaoChutar.addEventListener("click", verificarChute);
+// Faz a tecla Enter funcionar como clique no botão
+campoDigitar.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        botaoChutar.click(); 
+    }
+});
 
 // Lógica para reiniciar o jogo
 botaoReiniciar.addEventListener("click", () => {
