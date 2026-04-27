@@ -26,6 +26,58 @@ body{
     animation-fill-mode: alternate;
 }
 
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.leaderboard-container {
+    background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background-color 0.5s ease-in-out;
+
+}
+
+.leaderboard-titulo {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffcc00; /* Um dourado para o troféu */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 2px solid #ffcc00;
+    padding: 10px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+#lista-leaderboard tr:hover {
+    filter:sepia(50);
+    cursor: pointer;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+tbody tr:nth-child(1) { color: #ffcc00; font-weight: bold; } /* Ouro */
+tbody tr:nth-child(2) { color: #c0c0c0; } /* Prata */
+tbody tr:nth-child(3) { color: #cd7f32; } /* Bronze */
+
 .titulo{
     font-size: clamp(50px, 2.5rem, 10px);
     font-weight: 500;

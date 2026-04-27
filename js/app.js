@@ -1,3 +1,4 @@
+
 let numeroMaximo = 100;
 let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
 console.log("Número Secreto:", numeroSecreto); // Para testes
@@ -9,7 +10,6 @@ const botaoReiniciar = document.getElementById("reinicio-btn");
 
 let tentativas = 1;
 
-// Função que será executada quando clicar no botão
 function verificarChute() {
     let chute = parseInt(campoDigitar.value);
 
@@ -22,8 +22,25 @@ function verificarChute() {
         let palavraTentativa = tentativas > 1 ? "tentativas" : "tentativa";
         textoFeedback.innerText = `Isso aí! Você descobriu o número secreto ${numeroSecreto} com ${tentativas} ${palavraTentativa}!`;
         
-        // Bloqueia o botão após acertar
         botaoChutar.setAttribute('disabled', true);
+
+        // --- NOVA LÓGICA DE REGISTRO ---
+        setTimeout(() => {
+            const querRegistrar = confirm("Parabéns! Deseja registrar seu recorde no Leaderboard?");
+            
+            if (querRegistrar) {
+                const nome = prompt("Digite seu nome para o ranking:");
+                
+                if (nome && nome.trim() !== "") {
+                    // Chama a função que está no seu banco.js
+                    salvarPontuacao(nome.trim(), tentativas);
+                } else {
+                    alert("Registro cancelado: Nome não inserido.");
+                }
+            }
+        }, 500); // Pequeno atraso para o jogador ler a mensagem de vitória antes do pop-up
+        // -------------------------------
+
     } else {
         if (chute > numeroSecreto) {
             textoFeedback.innerText = `O número secreto é menor que ${chute}`;
@@ -53,3 +70,6 @@ campoDigitar.addEventListener('keypress', function (e) {
 botaoReiniciar.addEventListener("click", () => {
     location.reload(); // Forma mais simples de reiniciar tudo
 });
+
+// Chama o ranking assim que a página carregar
+document.addEventListener('DOMContentLoaded', carregarLeaderboard);
