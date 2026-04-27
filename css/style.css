@@ -36,6 +36,10 @@ main{
     gap: 80px;;
 }
 
+h2{
+    color: #fff;
+}
+
 .leaderboard-container {
     background: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
     backdrop-filter: blur(10px);
@@ -59,36 +63,49 @@ table {
 }
 
 th {
-    border-bottom: 2px solid #ffcc00;
     padding: 10px;
     text-align: left;
     font-size: 0.9rem;
     text-transform: uppercase;
 }
 
-#lista-leaderboard tr:hover {
-    filter:sepia(50);
-    cursor: pointer;
-}
+
 
 td {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     padding: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-tbody tr:nth-child(1) { color: #ffcc00; font-weight: bold; } /* Ouro */
-tbody tr:nth-child(2) { color: #c0c0c0; } /* Prata */
-tbody tr:nth-child(3) { color: #cd7f32; } /* Bronze */
+tbody tr:nth-child(1) { 
+    background: radial-gradient(ellipse farthest-corner at right bottom, #FEDB37 0%, #FDB931 8%, #9f7928 30%, #8A6E2F 40%, transparent 80%),
+    radial-gradient(ellipse farthest-corner at left top, #FFFFFF 0%, #FFFFAC 8%, #D1B464 25%, #5d4a1f 62.5%, #5d4a1f 100%);
+}
+ /* Ouro */
+tbody tr:nth-child(2) { 
+
+    background-image: linear-gradient(to right, #7E7E7E, #7D7D7D, #FEFEFE, #7D7D7D); 
+} /* Prata */
+tbody tr:nth-child(3) {
+    background: linear-gradient(
+    45deg, 
+    #673208 0%, 
+    #895E1A 25%, 
+    #B08D57 50%, 
+    #895E1A 75%, 
+    #673208 100%
+  );
+    } /* Bronze */
+
+/* tr:nth-child(even) {
+    backdrop-filter: blur(10px);
+;} */
+
 
 .titulo{
     font-size: clamp(50px, 2.5rem, 10px);
     font-weight: 500;
     color: #fff;
-}
-
-h2{
-    color: #ffffff9a;
-
 }
 
 .container{
@@ -108,13 +125,11 @@ h2{
 input{
     height: 50px;
     width: 500px;
-    box-shadow: 0 0 3px black;
-    align-self: right;
     transition: .5s ease;
 }
 
 input:hover{
-    border: 2px solid #fff ;
+    border: 2px inset #fff ;
 }
 
 

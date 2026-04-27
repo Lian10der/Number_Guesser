@@ -1,5 +1,5 @@
 const _supabase = supabase.createClient(
-    'https://nyrmzaqhjauvteorvtro.supabase.co', 
+    'https://nyrmzaqhjauvteorvtro.supabase.co',
     'sb_publishable_K9auMoG0UMzmsejGYHVIKQ_PxwEESMz'
 );
 
@@ -27,12 +27,24 @@ async function carregarLeaderboard() {
     }
 
     if (data) {
-        corpoTabela.innerHTML = data.map((item, index) => `
+        corpoTabela.innerHTML = data.map((item, index) => {
+            // Define o que aparecerá na coluna de posição
+            let posicaoTexto;
+            if (index === 0) posicaoTexto = '🥇';
+            else if (index === 1) posicaoTexto = '🥈';
+            else if (index === 2) posicaoTexto = '🥉';
+            else posicaoTexto = `${index + 1}º`;
+
+            return `
             <tr>
-                <td>${index + 1}º</td>
+                <td>${posicaoTexto}</td>
                 <td>${item.nome}</td>
                 <td>${item.tentativas}</td>
             </tr>
-        `).join('');
+        `;
+        }).join('');
     }
 }
+
+
+
