@@ -1,3 +1,5 @@
+
+
 @keyframes fundo{
       0% {
     background-position: 0% 50%;
@@ -27,10 +29,11 @@ body{
 }
 
 main{
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 80px;;
 }
 
 .leaderboard-container {
@@ -38,7 +41,6 @@ main{
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
-    margin-bottom: 20px;
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: background-color 0.5s ease-in-out;
@@ -118,7 +120,8 @@ input:hover{
 
 .buttons{
     display: flex;
-    gap: 8px;
+    
+    gap: 14px;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
@@ -132,36 +135,48 @@ input:hover{
     padding: 11px 0;
     flex: 1;
     border-radius: 4px;
-    box-shadow: 0 0 3px black;  
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.5s ease;
     border: none;
     box-sizing: border-box;
 }
 
 
 .btn:hover{
-    color: #fff;
-    background-color: black;
-    opacity: 0.85;
-    transform: scale(0.98);
+    
 }
+
+
 
 /* Botão primário - Chutar */
 #chute-btn {
-    background-color: #fff;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease, border-width 0.5s ease;
+}
+
+#chute-btn:hover {
+ 
     color: #5b21b6;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background-color: #fff;
+    opacity: 0.85;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 169, 0.082) 15px 15px;
 }
 
 /* Botão secundário - Reiniciar */
 #reinicio-btn {
     background: transparent;
     color: #fff;
-    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    border: 1px solid #fff;
+
 }
 
 #reinicio-btn:hover {
-    background: rgba(255,255,255,0.1);
+    color: #5b21b6;
+    background-color: #fff;
+    opacity: 0.85;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 169, 0.082) 15px 15px;
 }

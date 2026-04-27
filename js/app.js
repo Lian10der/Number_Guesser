@@ -72,4 +72,4 @@ botaoReiniciar.addEventListener("click", () => {
 });
 
 // Chama o ranking assim que a página carregar
-document.addEventListener('DOMContentLoaded', carregarLeaderboard);
+carregarLeaderboard();
