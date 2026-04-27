@@ -1,7 +1,7 @@
 
 let numeroMaximo = 100;
 let numeroSecreto = parseInt(Math.random() * numeroMaximo + 1);
-console.log("Número Secreto:", numeroSecreto); // Para testes
+// console.log("Número Secreto:", numeroSecreto); // Para testes
 
 const campoDigitar = document.getElementById("digite");
 const textoFeedback = document.getElementById("texto");
